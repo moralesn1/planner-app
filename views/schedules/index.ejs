@@ -1,0 +1,11 @@
+<h1>Entry Index</h1>
+<% schedules.forEach(schedule => { %>
+<div><%= schedule.title %></div>
+<div><%= schedule.createdAt %></div>
+<a href="/schedules/<%= schedule.id %>">View</a>
+<a href="/schedules/<%= schedule.id %>/edit">Edit</a>
+<%- include('../partials/deleteForm', 
+  { url: `/schedules/${schedule.id}` }) %>
+<br />
+<br />
+<% }) %>
